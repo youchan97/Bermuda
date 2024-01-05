@@ -23,7 +23,7 @@ public class TrapManager : MonoBehaviour, IAttackable
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<PlayerManager>().isInvisible == false)
+        if (other.tag == "Player" && other.GetComponent<PlayerManager>().isInvisible == false)
         {
             if(other.TryGetComponent(out IHitable hitable))
             {

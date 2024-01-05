@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -92,27 +93,31 @@ public class GameController : MonoBehaviour
 
         if (inventory.slots[index].item.name == "SpeedUp")
         {
-            float time = 5f;
+            float coolTime = 5f;
             player.moveSpeed += speedUpValue;
-            inventory.slots[index].item = null;
-            StartCoroutine(SpeedCoolTime(time));
+            ItemNull(index);
+            StartCoroutine(SpeedCoolTime(coolTime));
         }
         else if (inventory.slots[index].item.name == "Invisible")
         {
-            float time = 3f;
+            float coolTime = 3f;
             player.isInvisible = true;
-            inventory.slots[index].item = null;
-            StartCoroutine(InvisibleCoolTime(time));
+            ItemNull(index);
+            StartCoroutine(InvisibleCoolTime(coolTime));
         }
         else if (inventory.slots[index].item.name == "RouteSpray")
         {
-            float time = 5f;
+            float coolTime = 5f;
             DirectionUi.SetActive(true);
-            inventory.slots[index].item = null;
-            StartCoroutine(SprayCoolTime(time));
+            ItemNull(index);
+            StartCoroutine(SprayCoolTime(coolTime));
         }
 
         inventory.RemoveAt(index);
     }
-   
+
+    void ItemNull(int index)
+    {
+        inventory.slots[index].item = null;
+    }
 }
