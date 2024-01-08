@@ -3,14 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public interface IHitable //ÇÇ°Ý °´Ã¼
-{
-    void Hit(int damage);
-}
-public interface IAttackable //°ø°Ý °´Ã¼
-{
-    void Attack(IHitable hitable);
-}
 
 public class TrapManager : MonoBehaviour, IAttackable
 {

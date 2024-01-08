@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
-public class Item : ScriptableObject
+
+public abstract class Item : MonoBehaviour, IUseable
 {
-    public string itemName;
     public Sprite itemImgage;
+    public float runningTime;
+
+    public abstract void Use();
+    public abstract IEnumerator ReturnCool(float time);
 }

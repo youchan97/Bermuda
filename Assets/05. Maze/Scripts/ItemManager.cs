@@ -11,7 +11,8 @@ public class ItemManager : MonoBehaviour
         if (other.tag == "Player")
         {
             FindObjectOfType<Inventory>().AddItem(item[Random.Range(0,3)]);
-            Destroy(gameObject);
+            this.gameObject.GetComponent<Collider>().enabled = false;
+            this.gameObject.GetComponent<MeshRenderer>().enabled = false;
         }
     }
 }
