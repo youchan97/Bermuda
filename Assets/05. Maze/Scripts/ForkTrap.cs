@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class ForkTrap : TrapManager
 {
-    public bool isDown = true; //If the wall starts down, if not you must modify to false
-    //public float speed;
+    bool isDown = true; //If the wall starts down, if not you must modify to false
 
     private float height; //Height of the platform
     private float posYDown; //Start position of the Y coord
@@ -45,8 +44,6 @@ public class ForkTrap : TrapManager
                 StartCoroutine(WaitToChange(0.25f));
         }
     }
-
-
 
     //Function that wait before go down or up
     IEnumerator WaitToChange(float time)

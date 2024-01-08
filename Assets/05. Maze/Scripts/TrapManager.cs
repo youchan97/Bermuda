@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public interface IHitable
+public interface IHitable //피격 객체
 {
     void Hit(int damage);
 }
-public interface IAttackable
+public interface IAttackable //공격 객체
 {
     void Attack(IHitable hitable);
 }
@@ -25,7 +25,7 @@ public class TrapManager : MonoBehaviour, IAttackable
     {
         if (other.tag == "Player" && other.GetComponent<PlayerManager>().isInvisible == false)
         {
-            if(other.TryGetComponent(out IHitable hitable))
+            if(other.TryGetComponent(out IHitable hitable)) //피격체가 IHitable을 가지고 있는지 검사
             {
                 Attack(hitable);
             }
@@ -34,6 +34,6 @@ public class TrapManager : MonoBehaviour, IAttackable
 
     public void Attack(IHitable hitable)
     {
-        hitable.Hit(damage);
+        hitable.Hit(damage); //피격체의 Hit()함수 실행
     }
 }
