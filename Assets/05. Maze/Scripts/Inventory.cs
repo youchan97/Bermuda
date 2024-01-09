@@ -12,7 +12,7 @@ public class Inventory : MonoBehaviour
 
     void Awake()
     {
-        items = new Item[4]; //아이템의 공간 할당
+        items = new Item[4]; //인벤토리의 슬롯
         slots = bag.GetComponentsInChildren<Slot>(); //슬롯의 위치 설정
     }
 
