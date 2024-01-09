@@ -19,7 +19,7 @@ public class Slot : MonoBehaviour
             _item = value;
             if(_item != null) 
             {
-                image.sprite = item.itemImgage;
+                image.sprite = item.itemImage;
                 image.color = new Color(1, 1, 1, 1);
             }
             else

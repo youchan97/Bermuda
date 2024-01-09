@@ -23,7 +23,7 @@ public class Inventory : MonoBehaviour
             if (slots[i].item == null)
             {
                 slots[i].item = _item;
-                slots[i].image.sprite = _item.itemImgage;
+                slots[i].image.sprite = _item.itemImage;
                 return;
             }
         }

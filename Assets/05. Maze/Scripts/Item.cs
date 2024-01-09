@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class Item : MonoBehaviour, IUseable
 {
-    public Sprite itemImgage;
+    public Sprite itemImage;
     public float runningTime;
 
     public abstract void Use();
