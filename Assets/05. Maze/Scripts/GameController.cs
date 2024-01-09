@@ -35,7 +35,6 @@ public class GameController : MonoBehaviour
     IEnumerator Wait(float time, int index)
     {
         yield return new WaitForSeconds(time);
-        Debug.Log(inventory.slots[index].item.runningTime);
         ItemNull(index);
     }
     private void Awake()
