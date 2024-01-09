@@ -29,7 +29,7 @@ public class PlayerManager : MonoBehaviour, IHitable
     {
         playerData = FindObjectOfType<PlayerData>();
         gameHp = playerData.hp;
-        moveSpeed = playerData.speed;
+        moveSpeed = 3f;
         rigid = GetComponent<Rigidbody>();
         transform.position = Vector3.up * 5 + Vector3.forward * 75 + Vector3.right * -12;
         isJumping = false;
