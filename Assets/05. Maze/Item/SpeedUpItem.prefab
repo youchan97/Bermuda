@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 987638cc98bf69641ac5f5196dc37966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemImgage: {fileID: 21300000, guid: 69a3b26625252064f8d897d0986cea0a, type: 3}
+  itemImage: {fileID: 21300000, guid: 69a3b26625252064f8d897d0986cea0a, type: 3}
   runningTime: 5
-  addSpeed: 1
+  addSpeed: 0.4
 --- !u!212 &2938652566962764503
 SpriteRenderer:
   m_ObjectHideFlags: 0

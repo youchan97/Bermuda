@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerManager : MonoBehaviour, IHitable
 {
     private Rigidbody rigid;
-    private bool isJumping;
+    public bool isJumping;
     public int gameHp;
     public float moveSpeed;
     public PlayerData playerData;
