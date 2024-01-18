@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour
     public Inventory inventory;
     public PlayerManager player;
     public event Action OnGameEnd;
+    public InputAction itemUse;
 
     //각 아이템의 지속 시간 생성 및 지속 시간 종료 시 원 상태 복귀 
 
@@ -54,14 +55,19 @@ public class GameController : MonoBehaviour
         DirectionUi.SetActive(false);
         inventory = FindObjectOfType<Inventory>();
         player = FindObjectOfType<PlayerManager>();
+        itemUse = new InputAction();
+   
+    }
+
+    public void Use(InputAction.CallbackContext context)
+    {
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        /*if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SlotCheck(0);
-            Debug.Log((int)KeyCode.Alpha1);
         }
         if(Input.GetKeyDown(KeyCode.Alpha2))
         {
@@ -74,7 +80,7 @@ public class GameController : MonoBehaviour
         if( Input.GetKeyDown(KeyCode.Alpha4))
         {
             SlotCheck(3);
-        }
+        }*/
         if (player.GameHp <= 0)
             OnGameEnd();
     }

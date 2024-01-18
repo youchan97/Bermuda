@@ -17,9 +17,11 @@ namespace Maze
         }
         private void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "Player" && other.GetComponent<PlayerManager>().isInvisible == false)
+            if (other.tag == "Player" && 
+                other.GetComponent<PlayerManager>().isInvisible == false)
             {
-                if (other.TryGetComponent(out IHitable hitable)) //피격체가 IHitable을 가지고 있는지 검사
+                //피격체가 IHitable을 가지고 있는지 검사
+                if (other.TryGetComponent(out IHitable hitable)) 
                 {
                     Attack(hitable);
                 }

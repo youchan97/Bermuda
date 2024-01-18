@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MaseTrap : Maze.Trap
 {
-    MaseTrapStrategy maseTrapStrategy; //진자 운동 장애물에 대한 최대 각도
+    MaseTrapStrategy maseTrapStrategy;
 
     private void Start()
     {

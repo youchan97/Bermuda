@@ -16,7 +16,6 @@ public class PlayerManager : MonoBehaviour, IHitable
     public bool isInvisible;
     public PlayerInput input;
     InputAction useAction;
-    InputValue value;
 
     public int GameHp
     {
@@ -50,19 +49,10 @@ public class PlayerManager : MonoBehaviour, IHitable
     private void Update()
     {
         if (useAction.triggered)
-            Debug.Log(useAction);
+        {
+        }
     }
 
-    /*public void OnUse(InputValue value)
-    {
-        KeyInput(value);
-    }
-
-    public void KeyInput(int key)
-    {
-        keyCode = key;
-        Debug.Log(keyCode.);
-    }*/
 
     void FixedUpdate()
     {
