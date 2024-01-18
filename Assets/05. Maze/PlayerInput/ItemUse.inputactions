@@ -1,0 +1,67 @@
+{
+    "name": "ItemUse",
+    "maps": [
+        {
+            "name": "ItemUse",
+            "id": "e54d5c31-9f0a-41c5-b61a-4bd7dec49b75",
+            "actions": [
+                {
+                    "name": "Use",
+                    "type": "Value",
+                    "id": "d0f9b03e-f537-4fb7-bc70-078260e8df7b",
+                    "expectedControlType": "Integer",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0a60d638-b1d0-475a-9360-2d2d4d664956",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Use",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b0170d21-419e-43a8-8a16-77857d39a644",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Use",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "757c0945-ef04-40b6-86c5-5281d0b56c44",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Use",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d63fdb1e-4a9f-4f23-b30b-4dfc61d4f45e",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Use",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

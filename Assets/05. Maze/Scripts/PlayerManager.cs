@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour, IHitable
 {
@@ -13,6 +14,9 @@ public class PlayerManager : MonoBehaviour, IHitable
     public bool isCheck;
     private float RotateSpeed;
     public bool isInvisible;
+    public PlayerInput input;
+    InputAction useAction;
+    InputValue value;
 
     public int GameHp
     {
@@ -20,14 +24,18 @@ public class PlayerManager : MonoBehaviour, IHitable
         set
         {
             gameHp = value;
-            if(gameHp <= 0)
-                SceneManager.LoadScene("Die");
         }
+    }
+
+    private void Awake()
+    {
+        input = GetComponent<PlayerInput>();
+        useAction = input.actions["Use"];
     }
 
     void Start()
     {
-        playerData = FindObjectOfType<PlayerData>();
+        playerData = FindObjectOfType<PlayerData>();     
         gameHp = playerData.hp;
         moveSpeed = 3f;
         rigid = GetComponent<Rigidbody>();
@@ -36,7 +44,25 @@ public class PlayerManager : MonoBehaviour, IHitable
         isCheck = false;
         RotateSpeed = 250f;
         isInvisible = false;
+        GameController.instance.OnGameEnd += () => { Die(); };
     }
+
+    private void Update()
+    {
+        if (useAction.triggered)
+            Debug.Log(useAction);
+    }
+
+    /*public void OnUse(InputValue value)
+    {
+        KeyInput(value);
+    }
+
+    public void KeyInput(int key)
+    {
+        keyCode = key;
+        Debug.Log(keyCode.);
+    }*/
 
     void FixedUpdate()
     {
@@ -88,5 +114,10 @@ public class PlayerManager : MonoBehaviour, IHitable
     public void Hit(int damage)
     {
         GameHp -= damage;
+    }
+
+    public void Die()
+    {
+        SceneManager.LoadScene("Die");
     }
 }

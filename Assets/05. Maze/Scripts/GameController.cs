@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 public interface IHitable //피격 객체
 {
@@ -29,6 +29,7 @@ public class GameController : MonoBehaviour
     public GameObject invisibleUI;
     public Inventory inventory;
     public PlayerManager player;
+    public event Action OnGameEnd;
 
     //각 아이템의 지속 시간 생성 및 지속 시간 종료 시 원 상태 복귀 
 
@@ -60,6 +61,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SlotCheck(0);
+            Debug.Log((int)KeyCode.Alpha1);
         }
         if(Input.GetKeyDown(KeyCode.Alpha2))
         {
@@ -73,6 +75,8 @@ public class GameController : MonoBehaviour
         {
             SlotCheck(3);
         }
+        if (player.GameHp <= 0)
+            OnGameEnd();
     }
     public void SlotCheck(int index) //인벤토리에 아이템이 들어있나 확인
     {
