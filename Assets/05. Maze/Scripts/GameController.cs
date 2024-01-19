@@ -30,7 +30,6 @@ public class GameController : MonoBehaviour
     public Inventory inventory;
     public PlayerManager player;
     public event Action OnGameEnd;
-    public InputAction itemUse;
 
     //각 아이템의 지속 시간 생성 및 지속 시간 종료 시 원 상태 복귀 
 
@@ -55,13 +54,16 @@ public class GameController : MonoBehaviour
         DirectionUi.SetActive(false);
         inventory = FindObjectOfType<Inventory>();
         player = FindObjectOfType<PlayerManager>();
-        itemUse = new InputAction();
-   
+        /*player.use.UseItem.UseItem1.performed += Use;
+        player.use.UseItem.UseItem1.started += (_) => SlotCheck(1);
+        player.use.UseItem.UseItem1.started += (_) => SlotCheck(2);
+        player.use.UseItem.UseItem1.started += (_) => SlotCheck(3);*/
     }
 
-    public void Use(InputAction.CallbackContext context)
+    /*public void Use(InputAction.CallbackContext context)
     {
-    }
+        Debug.Log("안녕");
+    }*/
 
     void Update()
     {

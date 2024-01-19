@@ -47115,6 +47115,7 @@ GameObject:
   - component: {fileID: 1950040143}
   - component: {fileID: 1950040142}
   - component: {fileID: 1950040141}
+  - component: {fileID: 1950040147}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -47134,11 +47135,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1628d9dfa1805e428f89ca1d41d4b1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isJumping: 0
   gameHp: 0
   moveSpeed: 0
   playerData: {fileID: 0}
   isCheck: 0
   isInvisible: 0
+  input: {fileID: 0}
 --- !u!54 &1950040142
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -47261,6 +47264,100 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1950040147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950040140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 07c3289c7ca6a1d4aa4f62c0048c4ed9, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 661547473}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: SlotCheck
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d0f9b03e-f537-4fb7-bc70-078260e8df7b
+    m_ActionName: ItemUse/Use[/Keyboard/1,/Keyboard/2,/Keyboard/3,/Keyboard/4]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 661547473}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: SlotCheck
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 66d162aa-c4a8-4cbd-8354-049fb97e79f8
+    m_ActionName: ItemUse/UseItem2[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 661547473}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: SlotCheck
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a23b8d39-7aec-4675-88d9-8abfd9fb786f
+    m_ActionName: ItemUse/UseItem3[/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 661547473}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: SlotCheck
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0f63bd88-2aab-4306-8454-6efd876c2ada
+    m_ActionName: ItemUse/UseItem4[/Keyboard/4]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: UseItem
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &1952103732
 PrefabInstance:
   m_ObjectHideFlags: 0

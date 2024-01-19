@@ -15,7 +15,7 @@ public class PlayerManager : MonoBehaviour, IHitable
     private float RotateSpeed;
     public bool isInvisible;
     public PlayerInput input;
-    InputAction useAction;
+    //public ItemUse use;
 
     public int GameHp
     {
@@ -29,7 +29,7 @@ public class PlayerManager : MonoBehaviour, IHitable
     private void Awake()
     {
         input = GetComponent<PlayerInput>();
-        useAction = input.actions["Use"];
+        //use = new ItemUse();
     }
 
     void Start()
@@ -44,13 +44,6 @@ public class PlayerManager : MonoBehaviour, IHitable
         RotateSpeed = 250f;
         isInvisible = false;
         GameController.instance.OnGameEnd += () => { Die(); };
-    }
-
-    private void Update()
-    {
-        if (useAction.triggered)
-        {
-        }
     }
 
 
